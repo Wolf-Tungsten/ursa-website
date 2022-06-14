@@ -1,8 +1,11 @@
-@import url("fontawesome-all.min.css");
+
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900,300italic");
 
+body {
+    font-family: 'Source Sans Pro' !important;
+}
+
 .gh-head {
-    font-family: 'Source Sans Pro';
     position: fixed;
     z-index: 2;
     width: 100vw;
@@ -94,7 +97,7 @@
     font-size: 0.7em;
     text-align: center;
     color: #888;
-    max-width: 300px;
+    max-width: 250px;
 }
 
 .gh-main {
@@ -124,6 +127,11 @@
     top:0;
 }
 
+@media (min-width: 1115px) {
+    .ursa-title{
+        display: none;
+    }
+}
 @media (max-width: 767px) {
     .ursa-research-area-grid {
         grid-template-columns: 1fr;
@@ -179,12 +187,43 @@
 .people-grid {
     display: grid;
     grid-template-columns: minmax(var(--gap),auto) [aside-start] 1fr 2.5fr;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .people-aside {
     background-color: var(--color-lighter-gray);
     border-radius: 10px;
     grid-column-start: aside-start;
+}
+
+@media (max-width: 991px) {
+    /* hide people aside */
+    .people-grid {
+        grid-template-columns: 1fr;
+    }
+    .people-aside {
+        display: none;
+    }
+}
+
+.people-aside-text {
+    margin: 20px var(--gap);
+}
+
+.people-aside-text p {
+    margin-top: inherit;
+    margin-bottom: inherit;
+    color: var(--color-secondary-text);
+}
+
+.people-aside-text a {
+    display: block;
+    color: #d52349;
+    text-decoration: underline;
+    border-top: solid 1px #ddd;
+    padding: 1em 0 1em 0;
+    font-size: 0.9em;
 }
 
 .people-aside img {

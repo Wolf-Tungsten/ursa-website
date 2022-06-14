@@ -42,13 +42,13 @@
         "custom": {
             "title_font": {
                 "type": "select",
-                "options": ["Modern sans-serif", "Elegant serif"],
-                "default": "Modern sans-serif"
+                "options": ["Source Sans Pro"],
+                "default": "Source Sans Pro"
             },
             "body_font": {
                 "type": "select",
-                "options": ["Modern sans-serif", "Elegant serif"],
-                "default": "Modern sans-serif"
+                "options": ["Source Sans Pro"],
+                "default": "Source Sans Pro"
             }
         }
     }
