@@ -14,14 +14,18 @@
     }
 }
 
+.gh-head-logo img {
+    max-height: 45px;
+}
+
 .ursa-desc {
     margin-left: 0.2em;
 }
 
 .ursa-desc .abbr{
-    color: #FF7A00;
-    text-decoration: underline;
-    text-decoration-thickness: 3px;
+    color: var(--ghost-accent-color);
+    /* text-decoration: underline; */
+    /* text-decoration-thickness: 3px; */
 }
 
 .ursa-research-area {
@@ -167,3 +171,27 @@
         display: none;
     } 
 }
+
+.people-grid {
+    display: grid;
+    grid-template-columns: minmax(var(--gap),auto) [aside-start] 1fr 2.5fr;
+}
+
+.people-aside {
+    background-color: var(--color-lighter-gray);
+    border-radius: 10px;
+    grid-column-start: aside-start;
+}
+
+.people-aside img {
+    border-radius: 10px 10px 0 0;
+}
+
+.ursa-people .gh-article-image {
+    margin-top: 0;
+}
+
+.ursa-people .gh-article-title {
+    margin-top: 4rem;
+}
+

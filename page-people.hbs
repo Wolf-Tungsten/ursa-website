@@ -1,0 +1,92 @@
+{{!< default}}
+
+{{#post}}
+
+<main id="gh-main" class="gh-main ursa-people">
+    <div class="people-grid">
+    <aside class="people-aside">
+        <img src="{{asset "images/aside-head.jpg"}}"/>
+        <h1>Group</h1>
+        <p>Please follow-up the group websites below to see what is happening and where are Computer Architects headed.</p>
+        <a href="https://seal.ece.ucsb.edu/">Prof. Yuan Xie's SAEL Lab</a>
+        <a href="https://people.inf.ethz.ch/omutlu/">Prof. Onur Mutlu' SAFARI Research Group</a>
+        <a href="http://alchem.usc.edu/">Prof. Xuehai Qian's ALCHEM Research Group</a>
+        <a href="http://pacman.cs.tsinghua.edu.cn/~zjd/">Prof. Jidong Zhai's PACMAN Group</a>
+        <a href="https://xl10.github.io/">Prof. Xu Liu's Group</a>
+    </aside>
+    <article class="gh-article {{post_class}}">
+        <header class="gh-article-header gh-canvas">
+            {{#is "post"}}
+                <span class="gh-article-meta">
+                    {{#primary_author}}By <a href="{{url}}">{{name}}</a>{{/primary_author}}
+                    {{#if primary_tag}}
+                        in
+                        <a class="gh-article-tag" href="{{primary_tag.url}}">{{primary_tag.name}}</a>
+                    {{/if}}
+                    —
+                    <time datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
+                </span>
+            {{/is}}
+
+            {{#if feature_image}}
+                <figure class="gh-article-image">
+                    <img
+                        srcset="{{img_url feature_image size="s"}} 300w,
+                                {{img_url feature_image size="m"}} 720w,
+                                {{img_url feature_image size="l"}} 960w,
+                                {{img_url feature_image size="xl"}} 1200w,
+                                {{img_url feature_image size="xxl"}} 2000w"
+                        sizes="(max-width: 1200px) 100vw, 1200px"
+                        src="{{img_url feature_image size="xl"}}"
+                        alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                        style="border-radius:10px"
+                    >
+                    {{#if feature_image_caption}}
+                        <figcaption>{{feature_image_caption}}</figcaption>
+                    {{/if}}
+                </figure>
+            {{/if}}
+
+            <h1 class="gh-article-title">{{title}}</h1>
+
+            {{#if custom_excerpt}}
+                <p class="gh-article-excerpt">{{custom_excerpt}}</p>
+            {{/if}}
+
+            
+        </header>
+
+        <div class="gh-content gh-canvas">
+            {{content}}
+        </div>
+
+        {{#is "post"}}
+            <footer class="gh-article-footer gh-canvas">
+                <nav class="gh-navigation">
+                    <div class="gh-navigation-previous">
+                        {{#prev_post}}
+                            <a class="gh-navigation-link" href="{{url}}">
+                                <span class="gh-navigation-label">{{> icons/arrow-left}} Previous issue</span>
+                                <h4 class="gh-navigation-title">{{title}}</h4>
+                            </a>
+                        {{/prev_post}}
+                    </div>
+
+                    <div class="gh-navigation-middle"></div>
+
+                    <div class="gh-navigation-next">
+                        {{#next_post}}
+                            <a class="gh-navigation-link" href="{{url}}">
+                                <span class="gh-navigation-label">Next issue {{> icons/arrow-right}}</span>
+                                <h4 class="gh-navigation-title">{{title}}</h4>
+                            </a>
+                        {{/next_post}}
+                    </div>
+                </nav>
+            </footer>
+        {{/is}}
+    </article>
+    </div>
+</main>
+
+{{/post}}
