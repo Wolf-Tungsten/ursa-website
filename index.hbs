@@ -71,7 +71,7 @@
 
                 <div class="gh-feed">
                     {{^is "paged"}}
-                    {{#get "posts" filter="tag:'group-news'" limit="3"}} 
+                    {{#get "posts" filter="tag:'group-news'" limit="5"}} 
                     {{#foreach posts from="1"}}
                     {{> loop}}
                     {{/foreach}}
@@ -94,7 +94,6 @@
 
             <aside class="gh-sidebar">
                 <section class="gh-section">
-                    <h2 class="gh-section-title">About</h2>
 
                     <div class="gh-about">
                         {{#if @site.icon}}
@@ -110,6 +109,29 @@
                         </section>
                     </div>
 
+                    <h2 class="gh-section-title" style="margin-top:var(--gap);">Connect with Us</h2>
+
+                    <section class="gh-about-wrapper">
+                        <div class="ursa-about-item">
+                            <h5 class="gh-about-description">Address</h5>
+                            <p>
+                                ICT, CAS 
+                                No.6 Kexueyuan South Road Zhongguancun, Haidian District
+                                Beijing, China
+                            </p>
+                        </div>
+                        <div class="ursa-about-item">
+                            <h5 class="gh-about-description">Email</h5>
+                            <p>
+                                lixueqi@ict.ac.cn
+                            </p>
+                        </div>
+                        <div class="ursa-about-item">
+                            <div></div>
+                            <div><script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=3d4952&t=tt&d=_vQbhH7aPWpd_4iJltlDLrlLEYnxYHs-IreAZayhCHs&co=f6f6f6&ct=808080&cmo=febc11&cmn=ff5353'></script></div>
+                        </div> 
+                        
+                    </section>
                     {{!-- {{^if @member.paid}}
                     <div class="gh-signup">
                         {{^if @member}}

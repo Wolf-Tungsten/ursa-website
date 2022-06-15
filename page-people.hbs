@@ -1,24 +1,26 @@
 {{!< default}}
 
-{{#post}}
+{{#page}}
 
 <main id="gh-main" class="gh-main ursa-people">
     <div class="people-grid">
-    <aside class="people-aside">
-        <img src="{{asset "images/aside-head.jpg"}}"/>
-        <div class="people-aside-text">
-            <h2>Group</h2>
-            <p>Please follow-up the group websites below to see what is happening and where are Computer Architects headed.</p>
-            <a style="border-top:none;" href="https://seal.ece.ucsb.edu/">Prof. Yuan Xie's SAEL Lab</a>
-            <a href="https://people.inf.ethz.ch/omutlu/">Prof. Onur Mutlu' SAFARI Research Group</a>
-            <a href="http://alchem.usc.edu/">Prof. Xuehai Qian's ALCHEM Research Group</a>
-            <a href="http://pacman.cs.tsinghua.edu.cn/~zjd/">Prof. Jidong Zhai's PACMAN Group</a>
-            <a href="https://xl10.github.io/">Prof. Xu Liu's Group</a>
-        </div>
-    </aside>
+    <div style="grid-column-start: aside-start;">
+        <aside class="people-aside">
+            <img src="{{asset "images/aside-head.jpg"}}"/>
+            <div class="people-aside-text">
+                <h2>Group</h2>
+                <p>Please follow-up the group websites below to see what is happening and where are Computer Architects headed.</p>
+                <a style="border-top:none;" href="https://seal.ece.ucsb.edu/">Prof. Yuan Xie's SAEL Lab</a>
+                <a href="https://people.inf.ethz.ch/omutlu/">Prof. Onur Mutlu' SAFARI Research Group</a>
+                <a href="http://alchem.usc.edu/">Prof. Xuehai Qian's ALCHEM Research Group</a>
+                <a href="http://pacman.cs.tsinghua.edu.cn/~zjd/">Prof. Jidong Zhai's PACMAN Group</a>
+                <a href="https://xl10.github.io/">Prof. Xu Liu's Group</a>
+            </div>
+        </aside>
+    </div>
     <article class="gh-article {{post_class}}">
         <header class="gh-article-header gh-canvas">
-            {{#is "post"}}
+            {{!-- {{#is "post"}}
                 <span class="gh-article-meta">
                     {{#primary_author}}By <a href="{{url}}">{{name}}</a>{{/primary_author}}
                     {{#if primary_tag}}
@@ -28,7 +30,7 @@
                     —
                     <time datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
                 </span>
-            {{/is}}
+            {{/is}} --}}
 
             {{#if feature_image}}
                 <figure class="gh-article-image">
@@ -59,10 +61,76 @@
         </header>
 
         <div class="gh-content gh-canvas">
-            {{content}}
+
+            <div class="ursa-people-content">
+                <div class="ursa-people-list">
+                    {{#get "posts" filter="tag:'people-principle-investigator'"}} 
+                    {{#foreach posts}}
+                    <div class="ursa-people-item">
+                        <img style="border-color: rgb(254, 188, 17)" src="{{feature_image}}" />
+                        <div class="ursa-people-item-text">
+                            <h3>{{title}}</h4>
+                            <p>{{content}}</p>
+                        </div>
+                    </div>
+                    {{/foreach}}
+                    {{/get}} 
+                </div>
+            </div>            
+            
+            <div class="ursa-people-content">
+                <h2>Doctoral Students</h2>
+                <div class="ursa-people-list">
+                    {{#get "posts" filter="tag:'people-doctoral-student'" order="published_at asc"}} 
+                    {{#foreach posts}}
+                    <div class="ursa-people-item">
+                        <img src="{{feature_image}}" />
+                        <div class="ursa-people-item-text">
+                            <h3>{{title}}</h4>
+                            <p>{{content}}</p>
+                        </div>
+                    </div>
+                    {{/foreach}}
+                    {{/get}} 
+                </div>
+            </div>
+            
+            <div class="ursa-people-content">
+                <h2>Professor</h2>
+                
+                <div class="ursa-people-list">
+                    {{#get "posts" filter="tag:'people-prof'"}} 
+                    {{#foreach posts from="2"}}
+                    <div class="ursa-people-item">
+                        <img src="{{feature_image}}" />
+                        <div class="ursa-people-item-text">
+                            <h3>{{title}}</h4>
+                            <p>{{content}}</p>
+                        </div>
+                    </div>
+                    {{/foreach}}
+                    {{/get}} 
+                </div>
+
+                <div class="ursa-people-list">
+                    {{#get "posts" filter="tag:'people-prof'"}} 
+                    {{#foreach posts limit="1"}}
+                    <div class="ursa-people-item">
+                        <img style="border-color: #30cf43;" src="{{feature_image}}" />
+                        <div class="ursa-people-item-text">
+                            <h3>{{title}}</h4>
+                            <p>{{content}}</p>
+                        </div>
+                    </div>
+                    {{/foreach}}
+                    {{/get}} 
+                </div>
+
+            </div>
+
         </div>
 
-        {{#is "post"}}
+        {{!-- {{#is "post"}}
             <footer class="gh-article-footer gh-canvas">
                 <nav class="gh-navigation">
                     <div class="gh-navigation-previous">
@@ -86,9 +154,9 @@
                     </div>
                 </nav>
             </footer>
-        {{/is}}
+        {{/is}} --}}
     </article>
     </div>
 </main>
 
-{{/post}}
+{{/page}}

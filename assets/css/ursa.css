@@ -25,6 +25,14 @@ body {
     max-height: 45px;
 }
 
+.gh-card+.gh-card{
+    margin-top: 2.2rem;
+}
+
+.gh-card-title{
+    font-size: 2.1rem;
+}
+
 .ursa-desc {
     margin-left: 0.2em;
 }
@@ -100,8 +108,17 @@ body {
     max-width: 250px;
 }
 
+.ursa-about-item {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
 .gh-main {
     padding-top: 14rem !important;
+}
+
+.ursa-about-item p {
+    margin-top: 9px;
 }
 
 .gh-wrapper {
@@ -208,7 +225,7 @@ body {
 }
 
 .people-aside-text {
-    margin: 20px var(--gap);
+    padding: var(--gap);
 }
 
 .people-aside-text p {
@@ -238,3 +255,56 @@ body {
     margin-top: 4rem;
 }
 
+.ursa-people-content h2 {
+    height: 1.5em;
+    line-height: 1.5em;
+    text-align: center;
+    background: var(--color-lighter-gray);
+    border-radius: 10px;
+}
+
+.ursa-people-item {
+    display: grid;
+    grid-template-columns: 200px auto;
+
+}
+
+.ursa-people-item img {
+    border-radius: 100px;
+    margin: auto;
+    border-style: solid;
+    width: 150px;
+    border-width: 10px;
+    border-color: var(--color-light-gray);
+}
+
+.ursa-people-item-text {
+    min-height: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ursa-people-item-text p {
+    margin-top: 0.5rem;
+}
+
+.prof-list:first-child img {
+    border-color: #30cf43;
+}
+
+@media (max-width: 767px) {
+    .ursa-people h1 {
+        text-align: center;
+    }
+    .ursa-people-item{
+        grid-template-columns: auto;
+    }
+    .ursa-people-item-text h3{
+        text-align: center;
+        margin-top: 2rem; 
+    }
+    .ursa-people-item img {
+        margin-top: 3rem;
+    }
+}
