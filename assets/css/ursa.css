@@ -31,7 +31,9 @@ body {
 
 .gh-card-title{
     font-size: 2.1rem;
+    margin-top: 1rem;
 }
+
 
 .ursa-desc {
     margin-left: 0.2em;
@@ -132,7 +134,11 @@ body {
 }
 
 .gh-foot-inner {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+}
+
+.gh-copyright {
+    text-align: center;
 }
 
 .gh-powered-by {
