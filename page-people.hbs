@@ -94,6 +94,23 @@
                     {{/get}} 
                 </div>
             </div>
+
+            <div class="ursa-people-content">
+                <h2>Master Students</h2>
+                <div class="ursa-people-list">
+                    {{#get "posts" filter="tag:'people-master-student'" order="published_at asc"}} 
+                    {{#foreach posts}}
+                    <div class="ursa-people-item">
+                        <img src="{{feature_image}}" />
+                        <div class="ursa-people-item-text">
+                            <h3>{{title}}</h4>
+                            <p>{{content}}</p>
+                        </div>
+                    </div>
+                    {{/foreach}}
+                    {{/get}} 
+                </div>
+            </div>
             
             <div class="ursa-people-content">
                 <h2>Professor</h2>
