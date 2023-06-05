@@ -42,12 +42,12 @@
         "custom": {
             "title_font": {
                 "type": "select",
-                "options": ["Source Sans Pro"],
+                "options": ["Source Sans Pro", "Elegant serif"],
                 "default": "Source Sans Pro"
             },
             "body_font": {
                 "type": "select",
-                "options": ["Source Sans Pro"],
+                "options": ["Source Sans Pro", "Elegant serif"],
                 "default": "Source Sans Pro"
             }
         }
