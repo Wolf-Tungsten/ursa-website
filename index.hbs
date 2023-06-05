@@ -69,7 +69,7 @@
 
                 <div class="gh-feed">
                     {{^is "paged"}}
-                    {{#get "posts" filter="tag:'group-news'" limit="5"}} 
+                    {{#get "posts" filter="tag:'group-news'" limit="all"}} 
                     {{#foreach posts from="1"}}
                     {{> loop}}
                     {{/foreach}}

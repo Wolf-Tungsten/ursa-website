@@ -22,9 +22,16 @@
                             <img src="{{@site.logo}}" alt="{{@site.title}}">
                     </a>
                     <a class="gh-head-logo ursa-title" href="{{@site.url}}">
-                            {{@site.title}}
+                            {{!-- {{@site.title}} --}}
+                            <div class="title-red-block"></div>
+                            <img src="{{asset "images/title-font.png"}}"/>
                     </a> 
-                    <h1 class="gh-head-logo ursa-desc">XP<span class="abbr">U</span>-driven <span class="abbr">R</span>esearch on <span class="abbr">S</span>ystem and <span class="abbr">A</span>rchitecture</h1>
+                    {{!-- <h1 class="gh-head-logo ursa-desc">XP<span class="abbr">U</span>-driven <span class="abbr">R</span>esearch on <span class="abbr">S</span>ystem and <span class="abbr">A</span>rchitecture</h1> --}}
+                    {{!-- <h1 class="gh-head-logo ursa-desc">XPU-driven Research on System and Architecture</h1> --}}
+                    <h1 class="gh-head-logo ursa-desc">
+                        <div class="title-red-block"></div>
+                        <img src="{{asset "images/title-font.png"}}"/>
+                    </h1>
                     <button class="gh-burger"></button>
                 </div>
 

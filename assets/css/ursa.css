@@ -34,15 +34,29 @@ body {
     margin-top: 1rem;
 }
 
+.ursa-title {
+    margin-left: 0.2em;
+    display: flex;
+    align-items: center; 
+}
 
 .ursa-desc {
     margin-left: 0.2em;
+    display: flex;
+    align-items: center;
 }
 
 .ursa-desc .abbr{
     color: #30cf43;
     /* text-decoration: underline; */
     /* text-decoration-thickness: 3px; */
+}
+
+.title-red-block {
+    background: rgba(192,0,0,1); 
+    height: 36px; 
+    width: 5px; 
+    margin: 0 0.3em 0 0.15em;
 }
 
 .ursa-research-area {
@@ -204,7 +218,7 @@ body {
 @media (max-width: 1115px) {
     .ursa-desc {
         display: none;
-    } 
+    }
 }
 
 .people-grid {
@@ -226,6 +240,9 @@ body {
         grid-template-columns: 1fr;
     }
     .people-aside {
+        display: none;
+    }
+    .title-red-block {
         display: none;
     }
 }
