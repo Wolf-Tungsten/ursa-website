@@ -1,0 +1,83 @@
+{{!< default}}
+
+{{#page}}
+<main id="gh-main" class="gh-main ursa-page">
+    <div class="people-grid">
+    <div style="grid-column-start: aside-start;">
+        <aside class="people-aside">
+            <img src="{{asset "images/aside-head.jpg"}}"/>
+            <div class="people-aside-text">
+                <h2>Group</h2>
+                <p>Please follow-up the group websites below to see what is happening and where are Computer Architects headed.</p>
+                <a style="border-top:none;" href="https://seal.ece.ucsb.edu/">Prof. Yuan Xie's SAEL Lab</a>
+                <a href="https://people.inf.ethz.ch/omutlu/">Prof. Onur Mutlu' SAFARI Research Group</a>
+                <a href="http://alchem.usc.edu/">Prof. Xuehai Qian's ALCHEM Research Group</a>
+                <a href="http://pacman.cs.tsinghua.edu.cn/~zjd/">Prof. Jidong Zhai's PACMAN Group</a>
+                <a href="https://xl10.github.io/">Prof. Xu Liu's Group</a>
+            </div>
+        </aside>
+    </div>
+    <article class="gh-article {{post_class}}">
+        <header class="gh-article-header gh-canvas">
+
+            {{#if feature_image}}
+                <figure class="gh-article-image">
+                    <img
+                        srcset="{{img_url feature_image size="s"}} 300w,
+                                {{img_url feature_image size="m"}} 720w,
+                                {{img_url feature_image size="l"}} 960w,
+                                {{img_url feature_image size="xl"}} 1200w,
+                                {{img_url feature_image size="xxl"}} 2000w"
+                        sizes="(max-width: 1200px) 100vw, 1200px"
+                        src="{{img_url feature_image size="xl"}}"
+                        alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                        style="border-radius:10px"
+                    >
+                    {{#if feature_image_caption}}
+                        <figcaption>{{feature_image_caption}}</figcaption>
+                    {{/if}}
+                </figure>
+            {{/if}}
+
+            <h1 class="gh-article-title" style="font-family:'Source Sans Pro';margin-bottom:30px">{{title}}</h1>
+
+            {{#if custom_excerpt}}
+                <p class="gh-article-excerpt">{{custom_excerpt}}</p>
+            {{/if}}
+
+            <p>
+                {{content}}
+            </p>
+            
+        </header>
+
+        <div class="gh-content gh-canvas">
+
+            <div class="ursa-publication-content">
+                <div class="ursa-publication-list">
+                    {{#get "posts" filter="tag:'publication'" include="tags" limit="all"}} 
+                    {{#foreach posts}}
+                    <div class="ursa-publication-item">
+                        <h5>{{#foreach tags}}
+                                {{^match name 'publication'}}
+                                    <span class="pub-tag">{{name}}</span>
+                                {{/match}}
+                            {{/foreach}}{{title}}</h5>
+                        <div class="ursa-publication-item-content">
+                           <div class="ursa-publication-item-text">
+                                {{content}}
+                            </div>
+                        </div>                
+                    </div>
+                    {{/foreach}}
+                    {{/get}} 
+                </div>
+            </div>            
+            
+        </div>
+
+    </article>
+    </div>
+</main>
+
+{{/page}}
